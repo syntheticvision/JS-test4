@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products > 3</title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/users">Users</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/productsGreaterThan3">Products > 3</a></li>
+    </ul>
+  </nav>
+  <h1>Products with ID > 3</h1>
+  <table>
+    <tr>
+      <th>PID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+    </tr>
+    <% products.forEach(function(product) { %>
+      <% if (product.PID > 3) { %>
+        <tr>
+          <td><%= product.PID %></td>
+          <td><%= product.name %></td>
+          <td><%= product.price %></td>
+          <td><%= product.description %></td>
+        </tr>
+      <% } %>
+    <% }); %>
+  </table>
+</body>
+</html>
